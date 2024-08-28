@@ -38,11 +38,11 @@
           <div class="single-right-grids">
 
             <div class="col-md-4 single-right-grid-left">
-              <a href="single.html"><img src="{{ asset('storage/images/m1.jpg') }}" alt="" /></a>
+              <a href="{{ route('movies.show', $film->id)}}"><img src="/{{$film->poster}}" alt="" /> </a>
             </div>
             <div class="col-md-8 single-right-grid-right">
               <div class="song-info">
-                <h2>{{ $film->title }}</h2>	
+                <h2>{{ $film->title }}</h2>
                 <p class="author"><a href="#" class="author">{{ $film->year }}</a></p>
                 <p class="views">{{ $film->sinopsis }}</p>
               </div>
@@ -59,7 +59,7 @@
                       <tbody>
                         @foreach ($perans as $peran)
                         <tr>
-                          <td class="w3-list-info">{{ $peran->cast_id }}</td>
+                          <td class="w3-list-info">{{ $peran->cast()->first()->name }}</td>
                           <td class="w3-list-info">{{ $peran->actor }}</td>
                         </tr>
                         @endforeach
@@ -119,7 +119,7 @@
             <a href="#">Comments</a>
             <div class="agile-info-wthree-box">
               <form>
-                <input type="text" placeholder="Name" required="">			           					   
+                <input type="text" placeholder="Name" required="">
                 <input type="text" placeholder="Email" required="">
                 <input type="text" placeholder="Phone" required="">
                 <textarea placeholder="Message" required=""></textarea>
@@ -177,7 +177,7 @@
               </a>
               <div class="mid-1 agileits_w3layouts_mid_1_home">
                 <div class="w3l-movie-text">
-                  <h6><a href="{{ route('movies.show', $filmRelease->id) }}">{{ $filmRelease->title }}</a></h6>							
+                  <h6><a href="{{ route('movies.show', $filmRelease->id) }}">{{ $filmRelease->title }}</a></h6>
                 </div>
                 <div class="mid-2 agile_mid_2_home">
                   <p>{{ $filmRelease->year }}</p>
@@ -204,11 +204,11 @@
       </div>
     </div>
   <!--body wrapper end-->
-          
-             
+
+
       </div>
       <!-- //w3l-latest-movies-grids -->
-    </div>	
+    </div>
   </div>
 @endsection
 

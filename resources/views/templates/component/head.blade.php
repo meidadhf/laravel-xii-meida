@@ -31,7 +31,7 @@
   <script type="text/javascript" src="{{ asset('template/js/easing.js') }}"></script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
-      $(".scroll").click(function(event){		
+      $(".scroll").click(function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
       });
@@ -41,19 +41,19 @@
   <link href="{{ asset('template/css/owl.carousel.css') }}" rel="stylesheet" type="text/css" media="all">
   <script src="{{ asset('template/js/owl.carousel.js') }}"></script>
   <script>
-    $(document).ready(function() { 
+    $(document).ready(function() {
       $("#owl-demo").owlCarousel({
-     
+
         autoPlay: 3000, //Set AutoPlay to 3 seconds
-     
+
         items : 5,
         itemsDesktop : [640,5],
         itemsDesktopSmall : [414,4]
-     
+
       });
-     
-    }); 
-  </script> 
+
+    });
+  </script>
 
   @stack('style')
   </head>

@@ -19,7 +19,7 @@ return new class extends Migration
         });
         // add foreign keys on table film
         Schema::table('films', function (Blueprint $table) {
-            $table->foreignId('genre_id')->constrained();
+            $table->foreignId('genre_id')->nullable()->constrained();
         });
         // add foreign keys on table perans
         Schema::table('perans', function (Blueprint $table) {

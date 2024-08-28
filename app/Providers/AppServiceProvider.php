@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Interfaces\FilmRepositoryInterface;
 use App\Models\Genre;
-
+use App\Repositories\FilmRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
@@ -13,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    public function register(): void
+    public function register()
     {
-        //
+        $this->app->bind(FilmRepositoryInterface::class, FilmRepository::class);
     }
 
     /**
